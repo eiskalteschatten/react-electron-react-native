@@ -1,7 +1,7 @@
 {
-  "name": "electron-react-typescript",
+  "name": "react-electron-react-native",
   "version": "1.0.0",
-  "description": "A Boilerplate Project for Electron.js, React and TypeScript",
+  "description": "A Boilerplate Project for Electron.js, React, React Native and TypeScript",
   "main": "./public/electron.js",
   "scripts": {
     "build:react": "react-scripts build",
