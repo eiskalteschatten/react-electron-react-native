@@ -38,6 +38,7 @@
     "copyright": "Copyright © 2021 Alex Seifert",
     "appId": "com.alexseifert.electronReactTypeScript",
     "buildDependenciesFromSource": true,
+    "electronVersion": "20.1.4",
     "files": [
       "!*.code-workspace",
       "!.github",

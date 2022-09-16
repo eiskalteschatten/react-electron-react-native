@@ -4,8 +4,8 @@
   "description": "A Boilerplate Project for Electron.js, React, React Native and TypeScript",
   "main": "./public/electron.js",
   "scripts": {
-    "build": "npm run build:react && npm run build:electron",
-    "start": "concurrently \"cross-env BROWSER=none npm run start:react\" \"wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .\"",
+    "build": "npm run -ws build",
+    "start": "npm start -ws",
     "test": "npm run lint",
     "lint": "eslint \"./**/*.{tsx,ts,js}\"",
     "prepare": "husky install"
