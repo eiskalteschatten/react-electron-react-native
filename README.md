@@ -5,6 +5,8 @@
 
 A Boilerplate Project for Electron.js, React, React Native and TypeScript.
 
+**Note: This is still a work-in-progress!**
+
 ---
 
 Alex Seifert - https://www.alexseifert.com
