@@ -1,0 +1,104 @@
+{
+  "name": "@rern/desktop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./public/electron.js",
+  "scripts": {
+    "build:react": "react-scripts build",
+    "build:electron": "tsc --project tsconfig.electron.json",
+    "build": "npm run build:react && npm run build:electron",
+    "postbuild": "npm run copyassets",
+    "copyassets": "node ./build-scripts/copyassets.js",
+    "prestart": "npm run copyassets && npm run build:electron",
+    "start": "concurrently \"cross-env BROWSER=none npm run start:react\" \"wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .\"",
+    "start:react": "react-scripts start",
+    "test": "npm run lint",
+    "lint": "eslint \"./**/*.{tsx,ts,js}\"",
+    "postinstall": "electron-builder install-app-deps",
+    "prepack": "npm run build",
+    "pack": "electron-builder --dir",
+    "pack:skipsigning": "cross-env CSC_IDENTITY_AUTO_DISCOVERY=false npm run pack",
+    "predist": "npm run build",
+    "dist": "electron-builder",
+    "dist:skipsigning": "cross-env CSC_IDENTITY_AUTO_DISCOVERY=false npm run dist",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eiskalteschatten/react-electron-react-native.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eiskalteschatten/react-electron-react-native/issues"
+  },
+  "homepage": "https://github.com/eiskalteschatten/react-electron-react-native#readme",
+  "build": {
+    "productName": "ElectronReactTypeScript",
+    "copyright": "Copyright © 2021 Alex Seifert",
+    "appId": "com.alexseifert.electronReactTypeScript",
+    "buildDependenciesFromSource": true,
+    "files": [
+      "!*.code-workspace",
+      "!.github",
+      "!.husky",
+      "!.vscode",
+      "!build-scripts",
+      "build"
+    ],
+    "directories": {
+      "buildResources": "build-resources"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.productivity",
+      "entitlements": "build-resources/entitlements.mac.plist",
+      "type": "development",
+      "darkModeSupport": true
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "tar.gz"
+      ],
+      "category": "Office"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build-resources/icon.ico"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/electron-devtools-installer": "^2.2.2",
+    "electron": "^20.1.4",
+    "electron-builder": "^23.3.3",
+    "electron-devtools-installer": "^3.2.0",
+    "sass": "^1.54.9",
+    "wait-on": "^6.0.1"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "electron-log": "^4.4.8",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.0",
+    "react-scripts": "^5.0.1"
+  }
+}
