@@ -41,6 +41,7 @@
   },
   "workspaces": [
     "packages/desktop",
-    "packages/shared"
+    "packages/shared",
+    "packages/mobile"
   ]
 }
