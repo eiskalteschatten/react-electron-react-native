@@ -39,6 +39,7 @@
     "babel-jest": "^29.0.3",
     "jest": "^29.0.3",
     "metro-react-native-babel-preset": "^0.72.3",
+    "react-native-codegen": "^0.70.5",
     "react-test-renderer": "^18.2.0"
   },
   "dependencies": {
