@@ -32,7 +32,6 @@
   "bugs": {
     "url": "https://github.com/eiskalteschatten/react-electron-react-native/issues"
   },
-  "homepage": "https://github.com/eiskalteschatten/react-electron-react-native#readme",
   "build": {
     "productName": "ElectronReactTypeScript",
     "copyright": "Copyright © 2021 Alex Seifert",
