@@ -1,15 +1,6 @@
-node_modules
-
-*.code-workspace
-
+# OSX
+#
 .DS_Store
-
-dist
-electron-dist
-build
-
-.build-cache
-.eslintcache
 
 # Xcode
 #
@@ -69,5 +60,5 @@ buck-out/
 *.jsbundle
 
 # Ruby / CocoaPods
-ios/Pods/
-vendor/bundle/
+/ios/Pods/
+/vendor/bundle/
